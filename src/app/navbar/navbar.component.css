@@ -1,0 +1,76 @@
+/* Header Background .header {
+  background-color: #aec3b0;
+}
+
+Text & Icon Color 
+.header-text {
+  color: #eaded0;
+}
+
+Search Bar .search-bar {
+  background-color: rgba(234, 222, 208, 0.2);
+  border-radius: 10px;
+}
+
+Custom Input & Select .custom-input,
+.custom-select {
+  color: #0f2a1d;
+}
+
+Dropdown Menu .dropdown-menu {
+  background-color: #fff;
+}
+
+Icons .icon-colored svg {
+  color: #0f2a1d;
+  fill: #0f2a1d;
+}
+
+.icon-colored svg use {
+  stroke: #0f2a1d;
+}
+
+Navbar Links .nav-link {
+  color: #000 !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+Navbar Toggle Button .navbar-toggler svg {
+  color: #0f2a1d;
+  fill: #0f2a1d;
+} */
+
+
+/* Header Background */
+.header {
+  background-color: #AEC3B0;
+}
+
+/* Text & Icon Color */
+.header-text {
+  color: #0F2A1D;
+}
+
+/* Search Bar */
+.search-bar {
+  background-color: rgba(234, 222, 208, 0.2);
+  border-radius: 10px;
+}
+
+/* Custom Input & Select */
+.custom-input,
+.custom-select {
+  color: #0F2A1D;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background-color: #fff;
+}
+
+/* Icons */
+.icon-colored svg {
+  color: #0F2A1D;
+  fill: #0F2A1D;
+}

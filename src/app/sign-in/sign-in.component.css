@@ -1,0 +1,102 @@
+/* Full Page Background */
+body {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  /* Form Container */
+  .form-container {
+    width: 50%;
+    max-width: 500px; /* Adjust size */
+    background: #f7f5f581; /* Glass Effect */
+    backdrop-filter: blur(15px); /* Glass Blur Effect */
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 38px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Background Image Inside Form */
+  .form-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://img.freepik.com/free-vector/watercolor-house-plants-illustration_23-2150230730.jpg?t=st=1741158954~exp=1741162554~hmac=e17ba7863023fe96ad8d4cf2de5cd0efbba02d51accf6937e4a64cb23463cebc&w=900")
+        no-repeat center center;
+    background-size: cover;
+    opacity: 0.16; /* Adjust visibility */
+    z-index: 1;
+  }
+  
+  /* Form Content (to appear above background) */
+  .form-left {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  /* Input Fields */
+  .form-control {
+    border: none;
+    border-bottom: 2px solid #6b8e23;
+    border-radius: 0;
+    padding: 10px;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    color: #333;
+  }
+  
+  .form-control:focus {
+    border-bottom: 2px solid #6b8e23;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Button */
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #f3f6c3;
+    background-color: #436850;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    width: 100%;
+    transition: 0.3s;
+    box-shadow: -4px -2px 5px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+  }
+  
+  button:hover {
+    box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+  }
+  
+  button:active {
+    box-shadow: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 767px) {
+    .form-container {
+        width: 95%;
+        padding: 20px;
+    }
+  }
+  

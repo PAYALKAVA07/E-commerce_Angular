@@ -1,0 +1,26 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="row form-container ">
+        <div class="col-md-12 form-left">
+            <h3 class="mb-4 text-center">Login</h3>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email" formControlName="user_email">
+                    <span *ngIf="loginForm.get('user_email')?.invalid && loginForm.get('user_email')?.touched"
+                        class="error">Please enter a valid email..!</span>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Password" formControlName="user_password">
+                    <span
+                        *ngIf="loginForm.get('user_password')?.errors?.['required'] && loginForm.get('user_password')?.touched"
+                        class="error">Please Enter Password..!</span>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="text-center mt-3">
+                Don't have an account? 
+                <a routerLink="/register" class="text-primary">Register here</a>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,69 +1,4 @@
 <!-- <section class="pb-5">
-    <div class="container-lg">
-
-      <div class="row">
-        <div class="col-md-12">
-
-          <div class="section-header d-flex flex-wrap justify-content-between my-4">
-            
-            <h2 class="section-title">Best selling products</h2>
-
-            <div class="d-flex align-items-center">
-              <a href="#" class="btn btn-primary rounded-1">View All</a>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-12">
-
-          <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5">
-                
-            <div class="col">
-              <div class="product-item">
-                <figure>
-                  <a href="index.html" title="Product Title">
-                    <img src="images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
-                  </a>
-                </figure>
-                <div class="d-flex flex-column text-center">
-                  <h3 class="fs-6 fw-normal">Whole Wheat Sandwich Bread</h3>
-                  <div>
-                    <span class="rating">
-                      <svg width="18" height="18" class="text-warning"><use xlink:href="#star-full"></use></svg>
-                      <svg width="18" height="18" class="text-warning"><use xlink:href="#star-full"></use></svg>
-                      <svg width="18" height="18" class="text-warning"><use xlink:href="#star-full"></use></svg>
-                      <svg width="18" height="18" class="text-warning"><use xlink:href="#star-full"></use></svg>
-                      <svg width="18" height="18" class="text-warning"><use xlink:href="#star-half"></use></svg>
-                    </span>
-                    <span>(222)</span>
-                  </div>
-                  <div class="d-flex justify-content-center align-items-center gap-2">
-                    <del>$24.00</del>
-                    <span class="text-dark fw-semibold">$18.00</span>
-                    <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
-                  </div>
-                  <div class="button-area p-3 pt-0">
-                    <div class="row g-1 mt-2">
-                      <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                      <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><svg width="18" height="18"><use xlink:href="#cart"></use></svg> Add to Cart</a></div>
-                      <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-
-<section class="pb-5">
   <div class="container-lg">
     <div class="row">
       <div class="col-md-12">
@@ -73,7 +8,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="product-grid row">
-          <!-- Loop over each product in data -->
+
           <div class="col" *ngFor="let product of data">
             <div class="card">
               <div class="image-container">
@@ -107,13 +42,10 @@
                         d="M1213.369,767.59a16.533,16.533,0,0,1-12.9-6.307l-15.709-19.737L1255.7,701.8l.387,1.2c.072.215,7.31,22.432,9.718,34.973a9.161,9.161,0,0,1-2.437,8.227c-6.049,6.063-20.282,16.9-47.529,21.228A20.362,20.362,0,0,1,1213.369,767.59Zm-25.485-25.427,14.19,17.845a14.42,14.42,0,0,0,13.445,5.361c26.674-4.243,40.506-14.749,46.4-20.64a7.093,7.093,0,0,0,1.878-6.364c-2.078-10.75-7.74-28.738-9.273-33.525Z"
                         data-name="Path 30" id="Path_30"></path>
                     </g>
-                    <!-- Additional SVG groups and paths as defined... -->
                   </g>
                 </svg>
                 <div class="price">{{ product.product_price | currency }}</div>
               </div>
-              <!-- The rest of your card content goes here -->
-              <!-- Favorite icon (static as defined) -->
               <label class="favorite">
                 <input type="checkbox" checked>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000">
@@ -123,7 +55,6 @@
                 </svg>
               </label>
 
-              <!-- Content area -->
               <div class="content">
                 <div class="product-name">{{ product.product_name }}</div>
                 <div class="description">{{ product.product_description }}</div>
@@ -137,7 +68,6 @@
                 </div>
               </div>
 
-              <!-- Button container with quantity selector and action buttons -->
               <div class="button-container">
                 <div class="row g-1 mt-2">
                   <div class="col-3">
@@ -162,7 +92,83 @@
             </div>
 
           </div>
-          <!-- End *ngFor -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="pb-5">
+  <div class="container-lg">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="section-header d-flex flex-wrap justify-content-between my-4">
+
+          <h2 class="section-title">Best selling products</h2>
+
+          <div class="d-flex align-items-center">
+            <a href="#" class="btn btn-primary rounded-1">View All</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5">
+      <div class="col" *ngFor="let product of data">
+        <div class="product-item">
+          <figure>
+            <a href="index.html" title="{{ product.product_name }}">
+              <!-- <img [src]="product.product_images[0]" alt="{{ product.product_name }}" class="tab-image"> -->
+              <img src="https://img.freepik.com/free-psd/palm-tree-pot-isolated_23-2151867797.jpg?ga=GA1.1.1038891109.1740571077&semt=ais_hybrid" alt="{{ product.product_name }}" class="tab-image">
+            </a>
+          </figure>
+          <div class="d-flex flex-column text-center">
+            <h3 class="fs-6 fw-normal">{{ product.product_name }}</h3>
+            <div>
+              <span class="rating">
+                <ng-container *ngFor="let star of [1,2,3,4,5]">
+                  <svg *ngIf="star <= product.average_rating" width="18" height="18" class="text-warning">
+                    <use xlink:href="#star-full"></use>
+                  </svg>
+                  <svg *ngIf="star > product.average_rating && star - 1 < product.average_rating" width="18" height="18" class="text-warning">
+                    <use xlink:href="#star-half"></use>
+                  </svg>
+                  <svg *ngIf="star > product.average_rating && star - 1 >= product.average_rating" width="18" height="18" class="text-muted">
+                    <use xlink:href="#star-empty"></use>
+                  </svg>
+                </ng-container>
+              </span>
+              <span>({{ product.total_ratings }})</span>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-2">
+              <del *ngIf="product.original_price !== product.discount_price">{{ product.original_price | currency }}</del>
+              <span class="text-dark fw-semibold">{{ product.discount_price | currency }}</span>
+            </div>
+            <div class="button-area p-3 pt-0">
+              <div class="row g-1 mt-2">
+                <div class="col-3">
+                  <input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1">
+                </div>
+                <div class="col-7">
+                  <a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart">
+                    <svg width="18" height="18">
+                      <use xlink:href="#cart"></use>
+                    </svg> Add to Cart
+                  </a>
+                </div>
+                <div class="col-2">
+                  <a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6">
+                    <svg width="18" height="18">
+                      <use xlink:href="#heart"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

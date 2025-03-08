@@ -39,7 +39,7 @@ export class LoginComponent {
 
       },
         (err) => {
-          // console.log("Error",err.error.message);
+          console.log("Error",err.error.message);
           Swal.fire({
             title: 'Login Failed!',
             text: err.error.message,
@@ -49,6 +49,7 @@ export class LoginComponent {
             background: '#95714F',
             color:'black'
           });
+          // alert(err.error.message)
         })
     }
   }

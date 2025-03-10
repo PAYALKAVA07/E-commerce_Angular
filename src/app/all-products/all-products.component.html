@@ -1,0 +1,158 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-md p-3 bg-light">
+            <h4>Filters</h4>
+
+            <div class="form-group">
+                <label>Category</label>
+                <select class="form-control" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+                    <option value="all">All</option>
+                    <option *ngFor="let cat of Categories" [value]="cat._id">{{ cat.category_name }}</option>
+                  </select>
+                  
+            </div>
+
+            <div class="form-group">
+                <label>Price Range</label>
+                <input type="range" class="form-control" min="0" [max]="maxPriceLimit" [(ngModel)]="maxPrice" (change)="applyFilters()">
+                <span>Up to ${{ maxPrice }}</span>
+            </div>
+
+            <div class="form-group">
+                <label>Sort By</label>
+                <select class="form-control" [(ngModel)]="sortBy" (change)="applySorting()">
+                    <option value="none">None</option>
+                    <option value="price_low">Price: Low to High</option>
+                    <option value="price_high">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                    <option value="stock">Stock</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col" *ngFor="let prod of filteredProducts">
+                    <div class="card p-3">
+                        <img [src]="prod.product_images[0]" class="card-img-top" alt="Product Image">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ prod.product_name }}</h5>
+                            <div>
+                              <span class="rating">
+                                <ng-container *ngFor="let star of prod.stars">
+                                  <svg *ngIf="star === 1" width="18" height="18" class="text-warning">
+                                    <use xlink:href="#star-full"></use>
+                                  </svg>
+                                  <svg *ngIf="star === 0.5" width="18" height="18" class="text-warning">
+                                    <use xlink:href="#star-half"></use>
+                                  </svg>
+                                  <svg *ngIf="star === 0" width="18" height="18" class="text-muted">
+                                    <use xlink:href="#star-empty"></use>
+                                  </svg>
+                                </ng-container>
+                              </span>
+                              <span>({{ prod.total_ratings }})</span>
+                            </div>
+                            <p>${{ prod.final_price || prod.original_price }}</p>
+
+                            <div class="d-flex justify-content-center gap-2">
+                                <input type="number" class="form-control w-25" [(ngModel)]="quantity" value="1">
+                                <button class="btn btn-primary" (click)="addToCart(prod._id)">Add to Cart</button>
+                                <a (click)="addToWishlist(prod._id)" style="cursor: pointer;">
+                                    <span *ngIf="isInWishlist(prod._id)">❤️</span>
+                                    <span *ngIf="!isInWishlist(prod._id)">🤍</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="filteredProducts.length === 0" class="text-center mt-4">
+                    <p>No products found.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container-fluid p-4 bg-light">
+    <div class="row">
+      <!-- Sidebar for Filters -->
+      <div class="col-md-3 p-4 bg-white rounded shadow-sm">
+        <h4 class="text-success">Filters</h4>
+  
+        <div class="form-group">
+          <label class="fw-bold">Category</label>
+          <select class="form-control border-success" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+            <option value="all">All</option>
+            <option *ngFor="let cat of Categories" [value]="cat._id">{{ cat.category_name }}</option>
+          </select>
+        </div>
+  
+        <div class="form-group mt-3">
+          <label class="fw-bold">Price Range</label>
+          <input type="range" class="form-range" min="0" [max]="maxPriceLimit" [(ngModel)]="maxPrice" (change)="applyFilters()">
+          <span class="text-success">Up to ${{ maxPrice }}</span>
+        </div>
+  
+        <div class="form-group mt-3">
+          <label class="fw-bold">Sort By</label>
+          <select class="form-control border-success" [(ngModel)]="sortBy" (change)="applySorting()">
+            <option value="none">None</option>
+            <option value="price_low">Price: Low to High</option>
+            <option value="price_high">Price: High to Low</option>
+            <option value="rating">Rating</option>
+            <option value="stock">Stock</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Product Cards Section -->
+      <div class="col-md-9">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" *ngFor="let prod of filteredProducts">
+            <div class="card border-0 shadow-sm p-3 rounded bg-white">
+              <img [src]="prod.product_images[0]" class="card-img-top rounded" alt="Product Image">
+              <div class="card-body text-center">
+                <h5 class="card-title text-success">{{ prod.product_name }}</h5>
+  
+                <div class="d-flex justify-content-center align-items-center">
+                  <span class="rating me-2">
+                    <ng-container *ngFor="let star of prod.stars">
+                      <svg *ngIf="star === 1" width="18" height="18" class="text-warning">
+                        <use xlink:href="#star-full"></use>
+                      </svg>
+                      <svg *ngIf="star === 0.5" width="18" height="18" class="text-warning">
+                        <use xlink:href="#star-half"></use>
+                      </svg>
+                      <svg *ngIf="star === 0" width="18" height="18" class="text-muted">
+                        <use xlink:href="#star-empty"></use>
+                      </svg>
+                    </ng-container>
+                  </span>
+                  <span class="text-muted">({{ prod.total_ratings }})</span>
+                </div>
+  
+                <p class="fw-bold text-success">${{ prod.final_price || prod.original_price }}</p>
+  
+                <div class="d-flex justify-content-center gap-2">
+                  <input type="number" class="form-control w-25 border-success text-center" [(ngModel)]="quantity" value="1" min="1">
+                  <button class="btn btn-success" (click)="addToCart(prod._id)">🛒 Add to Cart</button>
+                  <a (click)="addToWishlist(prod._id)" style="cursor: pointer;">
+                    <span *ngIf="isInWishlist(prod._id)">💚</span>
+                    <span *ngIf="!isInWishlist(prod._id)">🤍</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div *ngIf="filteredProducts.length === 0" class="text-center mt-4">
+            <p class="text-muted">No products found.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

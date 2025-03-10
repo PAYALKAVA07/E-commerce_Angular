@@ -13,11 +13,9 @@ This is main CSS file that contains custom style rules used in this template
 /*--------------------------------------------------------------
 /** VARIABLES
 --------------------------------------------------------------*/
-
-
 body {
   background-color: #ebe5d9;
-  --heading-font        : "Inter", sans-serif;
+  --heading-font: "Inter", sans-serif;
   --bs-link-color: #333;
   --bs-link-hover-color:#333;
 
@@ -42,7 +40,7 @@ body {
   --bs-danger: #F95F09;
   --bs-danger-rgb: 249, 95, 9;
 
-  --bs-success: #a3be4c;
+  --bs-success: #854cbe;
   --bs-success-rgb: 163, 190, 76;
   
   --bs-primary-bg-subtle: #FFF9EB;
@@ -148,7 +146,34 @@ body {
 }
 body {
   letter-spacing: 0.03em;
+  background-color: #E3EED4;
 }
+.hstyle {
+  color: #800f2f; /* Apply text color */
+}
+
+.hstyle a,
+.hstyle svg {
+  color: #800f2f; /* Apply color to links and icons */
+}
+
+.hstyle a:hover,
+.hstyle svg:hover {
+  color: #c9184a; /* Optional: Change color on hover for better UX */
+}
+.search-bar{
+  /* border: 3px solid #800f2f; */
+}
+.search-bar input:focus,
+.search-bar select:focus {
+    outline: none;
+    box-shadow: none;
+}
+.form-select option:focus {
+  background-color: #800f2f; 
+  color: #ffffff;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--heading-font);
   color: var(--bs-dark);
@@ -376,11 +401,11 @@ input[type=number]::-webkit-outer-spin-button {
   bottom: -55px;
   z-index: 1;
   box-shadow: 0px 20px 44px rgba(0, 0, 0, 0.08);
-  /* transition: box-shadow 0.3s ease-out; */
+  transition: box-shadow 0.3s ease-out;
 }
 .product-item {
   position: relative;
-  padding: 16px;
+  padding-bottom: 16px;
   background: #FFFFFF;
   border-radius: 16px;
   margin-bottom: 30px;
@@ -391,17 +416,19 @@ input[type=number]::-webkit-outer-spin-button {
   display: block;
 }
 .product-item:hover {
-  /* z-index: 1; */
-  /* margin-bottom: -50px; */
+  z-index: 1;
+  margin-bottom: 65px;
   /* max-height: 500px; */
   box-shadow: 0px 0px 44px rgba(0, 0, 0, 0.08);
 }
-.product-item figure {
+.product-item {
   text-align: center;
 }
 .product-item figure img {
-  max-height: 210px;
+  /* max-height: 210px; */
+  max-width: 100%;
   height: auto;
+  border-radius: 16px 16px 0px 0px;
 }
 .product-item .product-qty {
   width: 85px;
@@ -423,7 +450,7 @@ input[type=number]::-webkit-outer-spin-button {
   line-height: 1;
   text-align: center;
   background: #FFFFFF;
-  border: 1px solid #E2E2E2;
+  /* border: 1px solid #E2E2E2; */
   border-radius: 6px;
   color: #222;
   padding: 0;

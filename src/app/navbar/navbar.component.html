@@ -50,7 +50,8 @@
   <div class="offcanvas-body">
     <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
       <li class="nav-item border-dashed active" *ngFor="let cat of data">
-        <a href="index.html" class="nav-link d-flex align-items-center gap-3 text-dark p-2">
+        <a [routerLink]="['/products',cat._id]" class="nav-link d-flex align-items-center gap-3 text-dark p-2"
+          (click)="getProductByCategory(cat._id)">
           <!-- <svg width="24" height="24" viewBox="0 0 24 24">
             <use href="#fruits"></use>
           </svg> -->
@@ -114,7 +115,7 @@
               aria-expanded="false">Pages</a>
             <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
               <li><a href="/" class="dropdown-item">About Us</a></li>
-              <li><a href="/" class="dropdown-item">Shop</a></li>
+              <li><a routerLink="/products" class="dropdown-item">Shop</a></li>
               <li><a href="/" class="dropdown-item">Single Product</a></li>
               <li><a href="/" class="dropdown-item">Cart</a></li>
               <li><a href="/" class="dropdown-item">Checkout</a></li>

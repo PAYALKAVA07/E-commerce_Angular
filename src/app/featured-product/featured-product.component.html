@@ -104,11 +104,13 @@
                   <span>({{ product.total_ratings }})</span>
                 </div>
                 <div class="d-flex justify-content-center align-items-center gap-2">
-                  <del *ngIf="product.discount_price < product.original_price">
+                  <del *ngIf="product.final_price && product.final_price < product.original_price">
                     ${{ product.original_price }}
                   </del>
-                  <span class="text-dark fw-semibold">${{ product.discount_price }}</span>
-                </div>
+                  <span class="text-dark fw-semibold">
+                    ${{ product.final_price || product.original_price }}
+                  </span>
+                </div>   
                 <div class="button-area p-3 pt-0">
                   <div class="row g-1 mt-2">
                     <div class="col-3">

@@ -6,9 +6,9 @@ export class Product {
   product_stockQuantity: number = 0;
   product_images: String[] = [];
   categoryID!: string;
-  discountID?: string;
+  // discountID?: string;
   original_price: number = 0;
-  discount_price: number = 0;
+  final_price: number = 0;
   average_rating: number = 0;
   total_ratings: number = 0;
   stars:[]=[];

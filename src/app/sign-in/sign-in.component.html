@@ -14,8 +14,6 @@
                         <input type="text" class="form-control" placeholder="Last Name" formControlName="user_lastName">
                         <span *ngIf="registerForm.get('user_lastName')?.errors?.['required'] && registerForm.get('user_lastName')?.touched"
                             class="error">Please Enter Last Name..!</span>
-                        <span *ngIf="registerForm.get('user_password')?.errors?.['required'] && registerForm.get('user_password')?.touched"
-                            class="error">Please Enter Password..!</span>
                     </div>
                 </div>
 
